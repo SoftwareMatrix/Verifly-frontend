@@ -19,19 +19,23 @@ const SearchBar = ({ onSearch }) => {
     <form onSubmit={handleSubmit} className="search-form">
       <svg
         className="search-icon"
-        viewBox="0 0 24 24"
+        width="14"
+        height="14"
+        viewBox="0 0 14 14"
         fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        <path
+          d="M13 13L8.99024 8.99024M10.3659 5.68293C10.3659 8.26924 8.26924 10.3659 5.68293 10.3659C3.09662 10.3659 1 8.26924 1 5.68293C1 3.09662 3.09662 1 5.68293 1C8.26924 1 10.3659 3.09662 10.3659 5.68293Z"
+          stroke="#AEAEAE"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
       <input
         type="text"
-        placeholder="Search for business..."
+        placeholder="Search For Business..."
         value={searchTerm}
         onChange={handleInputChange}
         className="search-input"
