@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #121212;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #121212;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}

@@ -1,14 +1,42 @@
-import React from "react";
 import SearchBar from "./SearchBar";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
-  const handleSearch = (term) => {};
+  const navLinks = ["Browse", "Businesses", "For Owners", "About", "Blog", "Contact"];
+
+  const handleSearch = (term) => {
+    void term;
+  };
 
   return (
     <nav className="navbar">
-      <h2 className="navbar-logo">Verifly</h2>
-      <SearchBar onSearch={handleSearch} />
+      <a href="/" className="navbar-logo" aria-label="Verifly home">
+        <span className="navbar-logo-mark" aria-hidden="true">
+          <span className="navbar-logo-roof" />
+          <span className="navbar-logo-house" />
+          <span className="navbar-logo-dot navbar-logo-dot-one" />
+          <span className="navbar-logo-dot navbar-logo-dot-two" />
+          <span className="navbar-logo-dot navbar-logo-dot-three" />
+        </span>
+        <span>Verifly</span>
+      </a>
+
+      <div className="navbar-content">
+        <div className="navbar-links" aria-label="Primary navigation">
+          {navLinks.map((link) => (
+            <a href={`#${link.toLowerCase().replaceAll(" ", "-")}`} key={link}>
+              {link}
+            </a>
+          ))}
+        </div>
+
+        <div className="navbar-actions">
+          <SearchBar onSearch={handleSearch} />
+          <a className="navbar-create-link" href="#create-account">
+            Create Account
+          </a>
+        </div>
+      </div>
     </nav>
   );
 };
