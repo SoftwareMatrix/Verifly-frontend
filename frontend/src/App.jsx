@@ -1,13 +1,12 @@
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 function App() {
   return (
-    <div
-      style={{ minHeight: "100vh", backgroundColor: "#121212", color: "#fff" }}
-    >
+    <div>
       <Navbar />
-      <main style={{ padding: "32px" }}>
-        <h1>მთავარი კონტენტი</h1>
+      <main>
+        <Hero />
       </main>
     </div>
   );
