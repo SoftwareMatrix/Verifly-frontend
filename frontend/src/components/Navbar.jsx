@@ -1,28 +1,29 @@
 import SearchBar from "./SearchBar";
 import "../styles/Navbar.css";
+import veriflyLogo from "../assets/logo1.png";
 
 const Navbar = () => {
-  const navLinks = ["Browse", "Businesses", "For Owners", "About", "Blog", "Contact"];
+  const navLinks = [
+    "Browse",
+    "Businesses",
+    "For Owners",
+    "About",
+    "Blog",
+    "Contact",
+  ];
 
   const handleSearch = (term) => {
     void term;
   };
 
   return (
-    <nav className="navbar">
-      <a href="/" className="navbar-logo" aria-label="Verifly home">
-        <span className="navbar-logo-mark" aria-hidden="true">
-          <span className="navbar-logo-roof" />
-          <span className="navbar-logo-house" />
-          <span className="navbar-logo-dot navbar-logo-dot-one" />
-          <span className="navbar-logo-dot navbar-logo-dot-two" />
-          <span className="navbar-logo-dot navbar-logo-dot-three" />
-        </span>
-        <span>Verifly</span>
+    <nav class="navbar">
+      <a href="/" class="navbar-logo" aria-label="Verifly home">
+        <img src={veriflyLogo} alt="Verifly" class="navbar-logo-image" />
       </a>
 
-      <div className="navbar-content">
-        <div className="navbar-links" aria-label="Primary navigation">
+      <div class="navbar-content">
+        <div class="navbar-links" aria-label="Primary navigation">
           {navLinks.map((link) => (
             <a href={`#${link.toLowerCase().replaceAll(" ", "-")}`} key={link}>
               {link}
@@ -30,9 +31,9 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="navbar-actions">
+        <div class="navbar-actions">
           <SearchBar onSearch={handleSearch} />
-          <a className="navbar-create-link" href="#create-account">
+          <a class="navbar-create-link" href="#create-account">
             Create Account
           </a>
         </div>

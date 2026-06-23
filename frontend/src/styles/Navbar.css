@@ -14,72 +14,15 @@
 .navbar-logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   flex: 0 0 auto;
-  color: #ffffff;
-  font-size: 27px;
-  font-weight: 800;
-  line-height: 1;
   text-decoration: none;
-  letter-spacing: 0;
 }
 
-.navbar-logo-mark {
-  position: relative;
-  display: inline-block;
-  width: 32px;
-  height: 30px;
-}
-
-.navbar-logo-roof,
-.navbar-logo-house,
-.navbar-logo-dot {
-  position: absolute;
+.navbar-logo-image {
   display: block;
+  width: 153px;
+  height: auto;
 }
-
-.navbar-logo-roof {
-  left: 4px;
-  top: 7px;
-  width: 20px;
-  height: 20px;
-  border-left: 3px solid #ffffff;
-  border-top: 3px solid #ffffff;
-  transform: rotate(45deg);
-}
-
-.navbar-logo-house {
-  left: 8px;
-  top: 14px;
-  width: 15px;
-  height: 12px;
-  border: 3px solid #ffffff;
-  border-top: 0;
-  border-radius: 1px;
-}
-
-.navbar-logo-dot {
-  width: 4px;
-  height: 4px;
-  background: #ffffff;
-  border-radius: 999px;
-}
-
-.navbar-logo-dot-one {
-  left: 22px;
-  top: 2px;
-}
-
-.navbar-logo-dot-two {
-  left: 27px;
-  top: 0;
-}
-
-.navbar-logo-dot-three {
-  left: 29px;
-  top: 7px;
-}
-
 .navbar-content {
   display: flex;
   align-items: center;
