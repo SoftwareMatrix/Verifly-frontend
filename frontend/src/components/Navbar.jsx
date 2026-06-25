@@ -17,13 +17,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav class="navbar">
-      <a href="/" class="navbar-logo" aria-label="Verifly home">
-        <img src={veriflyLogo} alt="Verifly" class="navbar-logo-image" />
+    <nav className="navbar">
+      <a href="/" className="navbar-logo" aria-label="Verifly home">
+        <img src={veriflyLogo} alt="Verifly" className="navbar-logo-image" />
       </a>
 
-      <div class="navbar-content">
-        <div class="navbar-links" aria-label="Primary navigation">
+      <div className="navbar-content">
+        <div className="navbar-links" aria-label="Primary navigation">
           {navLinks.map((link) => (
             <a href={`#${link.toLowerCase().replaceAll(" ", "-")}`} key={link}>
               {link}
@@ -31,9 +31,9 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div class="navbar-actions">
+        <div className="navbar-actions">
           <SearchBar onSearch={handleSearch} />
-          <a class="navbar-create-link" href="#create-account">
+          <a className="navbar-create-link" href="#create-account">
             Create Account
           </a>
         </div>
