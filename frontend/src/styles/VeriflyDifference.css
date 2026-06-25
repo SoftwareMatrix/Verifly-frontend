@@ -1,0 +1,91 @@
+.verifly-difference {
+  background: #f7f7f7;
+  color: #000000;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.verifly-difference-inner {
+  width: min(760px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 72px 0 58px;
+  text-align: center;
+}
+
+.difference-kicker {
+  margin: 0 0 10px;
+  color: #505050;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.verifly-difference h2 {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(38px, 3.6vw, 52px);
+  font-weight: 900;
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+.difference-copy {
+  max-width: 760px;
+  margin: 16px auto 58px;
+  color: #4a4a4a;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.12;
+  text-align: left;
+}
+
+.difference-actions {
+  display: grid;
+  gap: 18px;
+}
+
+.difference-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 60px;
+  border-radius: 8px;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.difference-button-primary {
+  border: 1px solid #000000;
+  background: #000000;
+  color: #ffffff;
+}
+
+.difference-button-secondary {
+  border: 1px solid #000000;
+  background: transparent;
+  color: #000000;
+}
+
+@media (max-width: 720px) {
+  .verifly-difference-inner {
+    width: calc(100% - 32px);
+    padding: 56px 0 48px;
+  }
+
+  .difference-kicker {
+    font-size: 16px;
+  }
+
+  .verifly-difference h2 {
+    font-size: 34px;
+  }
+
+  .difference-copy {
+    margin-bottom: 40px;
+    font-size: 18px;
+    text-align: center;
+  }
+}
