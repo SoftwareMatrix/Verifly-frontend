@@ -35,7 +35,7 @@ const SearchBar = ({ onSearch }) => {
       </svg>
       <input
         type="text"
-        placeholder="Search For Business..."
+        placeholder="Search For Product..."
         value={searchTerm}
         onChange={handleInputChange}
         className="search-input"
