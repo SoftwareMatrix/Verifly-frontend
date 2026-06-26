@@ -1,26 +1,27 @@
 import "../styles/HowItWorks.css";
+import howImageOne from "../assets/Rectangle 918.png";
+import howImageTwo from "../assets/Rectangle 928.png";
+import howImageThree from "../assets/Rectangle 923.png";
+import howImageFour from "../assets/Rectangle 929.png";
 
 const ownerSteps = [
   {
     title: "Create your profile",
     description:
       "Sign up and fill in your brand story, category, location, and contact details. Takes under 10 minutes.",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+    image: howImageOne,
   },
   {
     title: "Add your offerings",
     description:
       "List your services or products with descriptions and pricing. Upload photos to bring your brand to life.",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+    image: howImageThree,
   },
   {
     title: "Get discovered",
     description:
       "Your profile is live in the right category. Visitors browsing Verifly find you and reach out directly.",
-    image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
+    image: howImageTwo,
   },
 ];
 
@@ -29,22 +30,19 @@ const explorerSteps = [
     title: "Browse by category",
     description:
       "Choose from seven curated categories - food, education, beauty, clothing, technology, household, or local services.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+    image: howImageTwo,
   },
   {
     title: "Explore profiles",
     description:
       "Each profile shows the brand story, full service list with pricing, photos, and direct contact options.",
-    image:
-      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=80",
+    image: howImageFour,
   },
   {
     title: "Connect directly",
     description:
       "Reach out to the business owner through their profile. No intermediary, no platform fees.",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+    image: howImageThree,
   },
 ];
 
@@ -56,7 +54,9 @@ const TimelineColumn = ({ title, steps }) => {
       <div className="timeline">
         {steps.map((step, index) => (
           <article className="timeline-step" key={step.title}>
-            <div className="timeline-number">{String(index + 1).padStart(2, "0")}</div>
+            <div className="timeline-number">
+              {String(index + 1).padStart(2, "0")}
+            </div>
 
             <div className="timeline-content">
               <h4>{step.title}</h4>

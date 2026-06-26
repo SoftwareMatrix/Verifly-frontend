@@ -1,4 +1,10 @@
 import "../styles/BusinessCategories.css";
+import businessImageOne from "../assets/Rectangle 945.png";
+import businessImageTwo from "../assets/Rectangle 946.png";
+import businessImageThree from "../assets/Rectangle 905.png";
+import businessImageFour from "../assets/Rectangle 947.png";
+import businessImageFive from "../assets/Rectangle 948.png";
+import businessImageSix from "../assets/Rectangle 949.png";
 
 const categories = [
   "All",
@@ -17,45 +23,43 @@ const categories = [
 const businesses = [
   {
     name: "Ember & Grain",
-    description: "Artisan sourdough and small-batch preserves, baked with intention.",
+    description:
+      "Artisan sourdough and small-batch preserves, baked with intention.",
     location: "Atlanta, GA",
-    image:
-      "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=780&q=80",
+    image: businessImageOne,
   },
   {
     name: "Luminary Tutors",
-    description: "One-on-one academic coaching for students who want to think, not just pass.",
+    description:
+      "One-on-one academic coaching for students who want to think, not just pass.",
     location: "Remote",
-    image:
-      "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=780&q=80",
+    image: businessImageTwo,
   },
   {
     name: "Fold & Form",
     description: "Considered clothing for people who dress with purpose.",
     location: "London, UK",
-    image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=780&q=80",
+    image: businessImageThree,
   },
   {
     name: "Sable Studio",
     description: "Clean beauty rituals rooted in botanical science.",
     location: "Greece SA",
-    image:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=780&q=80",
+    image: businessImageFour,
   },
   {
     name: "Circuitly",
-    description: "Custom hardware and embedded systems for makers and micro-businesses.",
+    description:
+      "Custom hardware and embedded systems for makers and micro-businesses.",
     location: "Nairobi, KE",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=780&q=80",
+    image: businessImageFive,
   },
   {
     name: "Hearth & Hold",
-    description: "Handcrafted home goods that make everyday spaces feel considered.",
+    description:
+      "Handcrafted home goods that make everyday spaces feel considered.",
     location: "Bangalore, IN",
-    image:
-      "https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=780&q=80",
+    image: businessImageSix,
   },
 ];
 
