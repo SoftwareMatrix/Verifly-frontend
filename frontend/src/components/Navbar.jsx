@@ -1,9 +1,8 @@
-import React from "react";
 import SearchBar from "./SearchBar";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
-  const handleSearch = (term) => {};
+  const handleSearch = () => {};
 
   return (
     <nav className="navbar">
