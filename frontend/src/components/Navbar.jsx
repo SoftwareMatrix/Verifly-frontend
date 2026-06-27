@@ -18,11 +18,11 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <a href="/" className="navbar-logo" aria-label="Verifly home">
-        <img src={veriflyLogo} alt="Verifly" className="navbar-logo-image" />
-      </a>
+      <div className="navbar-inner">
+        <a href="/" className="navbar-logo" aria-label="Verifly home">
+          <img src={veriflyLogo} alt="Verifly" className="navbar-logo-image" />
+        </a>
 
-      <div className="navbar-content">
         <div className="navbar-links" aria-label="Primary navigation">
           {navLinks.map((link) => (
             <a href={`#${link.toLowerCase().replaceAll(" ", "-")}`} key={link}>

@@ -6,11 +6,8 @@ const VeriflyDifference = () => {
       <div className="verifly-difference-inner">
         <p className="difference-kicker">The Verifly Difference.</p>
 
-        <h2>
-          Not a marketplace. Not a directory.
-          <br />
-          A presence platform.
-        </h2>
+        <h2>Not a marketplace. Not a directory.</h2>
+        <p className="difference-platform">A presence platform.</p>
 
         <p className="difference-copy">
           Verifly is built around the belief that small businesses deserve a digital

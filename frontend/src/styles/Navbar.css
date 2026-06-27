@@ -3,22 +3,25 @@
   top: 0;
   left: 0;
   z-index: 1000;
-
-  display: block;
-  background-color: #000;
-  color: #fff;
   width: 100%;
   height: 60px;
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.6);
   box-sizing: border-box;
-  font-family: "Inter", Arial, sans-serif;
+}
+
+.navbar-inner {
+  width: min(1260px, calc(100% - 180px));
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-logo {
-  position: absolute;
-  top: 1px;
-  left: 100px;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   width: 160px;
   height: 56px;
   text-decoration: none;
@@ -31,28 +34,18 @@
   object-fit: contain;
 }
 
-.navbar-content {
-  display: contents;
-}
-
-.navbar-links,
-.navbar-actions {
+.navbar-links {
   display: flex;
   align-items: center;
-}
-
-.navbar-links {
-  position: absolute;
-  top: 0;
-  left: 306px;
-  height: 60px;
   gap: 40px;
+  margin-left: 30px;
 }
 
 .navbar-links a {
   color: #aeaeae;
-  font-size: 16px;
-  font-weight: 600;
+  font-family: "League Spartan", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
@@ -64,10 +57,10 @@
 }
 
 .navbar-actions {
-  position: absolute;
-  top: 10px;
-  right: 100px;
+  display: flex;
+  align-items: center;
   gap: 30px;
+  margin-left: auto;
 }
 
 .navbar-create-link {
@@ -76,111 +69,89 @@
   justify-content: center;
   width: 130px;
   height: 34px;
-  margin-top: 3px;
   border-radius: 5px;
   background: #ffffff;
   color: #000000;
-  font-size: 9px;
-  font-weight: 800;
+  font-family: "League Spartan", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
 }
 
+.navbar-create-link:hover {
+  background: #e8e8e8;
+}
+
 @media (max-width: 1180px) {
-  .navbar {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 12px 42px;
-    height: auto;
-    min-height: 60px;
-  }
-
-  .navbar-logo {
-    position: static;
-    flex: 0 0 auto;
-  }
-
-  .navbar-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 28px;
-    flex: 1 1 auto;
-    min-width: 0;
-  }
-
-  .navbar-actions {
-    position: static;
-    gap: 26px;
-    flex: 0 0 auto;
-  }
-
-  .navbar-links {
-    position: static;
-    height: auto;
+  .navbar-inner {
+    width: calc(100% - 48px);
     gap: 20px;
   }
 
-  .navbar-links a {
-    font-size: 15px;
-  }
-}
-
-@media (min-width: 1181px) and (max-width: 1399px) {
-  .navbar-logo {
-    left: 90px;
-  }
-
   .navbar-links {
-    left: 300px;
-    gap: 28px;
+    gap: 20px;
+    margin-left: 20px;
   }
 
   .navbar-links a {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .navbar-actions {
-    right: 72px;
-    gap: 24px;
+    gap: 16px;
   }
 }
 
-@media (max-width: 920px) {
-  .navbar {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 18px 24px;
-  }
-
-  .navbar-content {
-    align-items: flex-start;
-    flex-direction: column;
-    width: 100%;
+@media (max-width: 1080px) {
+  .navbar-inner {
+    width: calc(100% - 64px);
+    gap: 16px;
   }
 
   .navbar-links {
-    flex-wrap: wrap;
-    gap: 14px 20px;
+    gap: 14px;
+    margin-left: 14px;
+  }
+
+  .navbar-links a {
+    font-size: 14px;
   }
 
   .navbar-actions {
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 560px) {
-  .navbar-actions {
-    align-items: stretch;
-    flex-direction: column;
     gap: 12px;
   }
 
   .navbar-create-link {
-    width: 130px;
-    height: 34px;
+    width: 110px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 860px) {
+  .navbar {
+    height: auto;
+  }
+
+  .navbar-inner {
+    width: calc(100% - 48px);
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 14px;
+    padding: 14px 0;
+  }
+
+  .navbar-links {
+    margin-left: 0;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+
+  .navbar-actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
   }
 }

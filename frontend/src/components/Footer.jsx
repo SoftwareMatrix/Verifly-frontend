@@ -39,7 +39,6 @@ const footerColumns = [
 const Footer = () => {
   return (
     <footer className="site-footer">
-      <div className="footer-separator" aria-hidden="true" />
 
       <div className="site-footer-inner">
         <div className="footer-brand">

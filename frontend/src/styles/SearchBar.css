@@ -43,3 +43,9 @@
   height: 14px;
   pointer-events: none;
 }
+
+@media (max-width: 1080px) {
+  .search-form {
+    width: 130px;
+  }
+}
