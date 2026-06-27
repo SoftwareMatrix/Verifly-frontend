@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/VeriflyDifference.css";
 
 const VeriflyDifference = () => {
+  const navigate = useNavigate();
   return (
     <section className="verifly-difference" id="difference">
       <div className="verifly-difference-inner">
@@ -16,9 +18,9 @@ const VeriflyDifference = () => {
         </p>
 
         <div className="difference-actions">
-          <a className="difference-button difference-button-primary" href="#create-account">
+          <button className="difference-button difference-button-primary" onClick={() => navigate("/register")}>
             Start Your Profile
-          </a>
+          </button>
           <a className="difference-button difference-button-secondary" href="#businesses">
             Explore Businesses
           </a>
