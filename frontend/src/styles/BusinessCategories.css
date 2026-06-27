@@ -1,0 +1,212 @@
+.business-categories {
+  background: #000000;
+  color: #ffffff;
+}
+
+.business-categories-inner {
+  width: min(1260px, calc(100% - 180px));
+  margin: 0 auto;
+  padding: 62px 0 80px;
+}
+
+.business-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: #aeaeae;
+  font-family: "League Spartan", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.business-section-kicker span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  border-radius: 5px;
+  background: #aeaeae;
+}
+
+.business-categories h2 {
+  margin: 20px 0 50px;
+  color: #ffffff;
+  font-family: "League Spartan", sans-serif;
+  font-size: clamp(44px, 4.86vw, 70px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 20px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  background: #000000;
+  color: #ffffff;
+  font-family: "League Spartan", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.category-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.category-chip-active {
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
+
+.category-chip-active:hover {
+  background: #e8e8e8;
+}
+
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 62px;
+}
+
+.business-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 0.6px solid #aeaeae;
+  border-radius: 10px;
+  background: #000000;
+}
+
+.business-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 400 / 270;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.business-card-body {
+  flex: 1;
+  padding: 16px 16px 14px;
+  border-top: 0.6px solid #aeaeae;
+}
+
+.business-card h3 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.business-card p {
+  max-width: 323px;
+  margin: 8px 0 0;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 1.2;
+}
+
+.business-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 1;
+}
+
+.business-card-footer strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.view-all-businesses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 300px;
+  height: 50px;
+  margin: 52px auto 0;
+  border: 1px solid #aeaeae;
+  border-radius: 10px;
+  background: #000000;
+  color: #ffffff;
+  font-family: "League Spartan", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: background 140ms ease;
+}
+
+.view-all-businesses:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 1180px) {
+  .business-categories-inner {
+    width: min(100% - 48px, 900px);
+  }
+
+  .business-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .business-categories-inner {
+    width: calc(100% - 32px);
+    padding: 48px 0 60px;
+  }
+
+  .business-categories h2 {
+    font-size: 42px;
+    margin-bottom: 36px;
+  }
+
+  .business-grid {
+    grid-template-columns: 1fr;
+    margin-top: 42px;
+    gap: 20px;
+  }
+
+  .category-chip {
+    font-size: 17px;
+    height: 36px;
+    padding: 0 16px;
+  }
+
+  .view-all-businesses {
+    width: 100%;
+  }
+}

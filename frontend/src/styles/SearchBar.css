@@ -1,6 +1,6 @@
 .search-form {
   position: relative;
-  width: 190px;
+  width: 170px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -42,4 +42,10 @@
   width: 14px;
   height: 14px;
   pointer-events: none;
+}
+
+@media (max-width: 1080px) {
+  .search-form {
+    width: 130px;
+  }
 }
