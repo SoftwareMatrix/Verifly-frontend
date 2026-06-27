@@ -5,10 +5,10 @@ import HowItWorks from "../components/HowItWorks";
 import VeriflyDifference from "../components/VeriflyDifference";
 import Footer from "../components/Footer";
 
-const HomePage = () => {
+const HomePage = ({ onCreateAccount }) => {
   return (
     <div>
-      <Navbar />
+      <Navbar onCreateAccount={onCreateAccount} />
       <main>
         <Hero />
         <BusinessCategories />

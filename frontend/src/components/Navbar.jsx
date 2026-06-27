@@ -2,7 +2,7 @@ import SearchBar from "./SearchBar";
 import "../styles/Navbar.css";
 import veriflyLogo from "../assets/logo1.png";
 
-const Navbar = () => {
+const Navbar = ({ onCreateAccount }) => {
   const navLinks = [
     "Browse",
     "Businesses",
@@ -33,9 +33,9 @@ const Navbar = () => {
 
         <div className="navbar-actions">
           <SearchBar onSearch={handleSearch} />
-          <a className="navbar-create-link" href="#create-account">
+          <button className="navbar-create-link" onClick={onCreateAccount}>
             Create Account
-          </a>
+          </button>
         </div>
       </div>
     </nav>
