@@ -138,13 +138,6 @@ const ListYourBusinessPage = () => {
               <label className="lyb-label" htmlFor="biz-category">Category</label>
               <select className="lyb-input lyb-select" id="biz-category" defaultValue="">
                 <option value="" disabled>Select A Category</option>
-                <option>Food &amp; Beverage</option>
-                <option>Technology</option>
-                <option>Mobile Accessories</option>
-                <option>Local Services</option>
-                <option>Clothing &amp; Fashion</option>
-                <option>Beauty &amp; Wellness</option>
-                <option>Other Businesses</option>
               </select>
             </div>
 
