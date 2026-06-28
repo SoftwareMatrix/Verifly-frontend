@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import CreateAccountTypePage from "./pages/CreateAccountTypePage";
 import RegisterCustomerPage from "./pages/RegisterCustomerPage";
 import RegisterEntrepreneurPage from "./pages/RegisterEntrepreneurPage";
+import ListYourBusinessPage from "./pages/ListYourBusinessPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/register" element={<CreateAccountTypePage />} />
         <Route path="/register/customer" element={<RegisterCustomerPage />} />
         <Route path="/register/entrepreneur" element={<RegisterEntrepreneurPage />} />
+        <Route path="/list-your-business" element={<ListYourBusinessPage />} />
       </Routes>
     </BrowserRouter>
   );
