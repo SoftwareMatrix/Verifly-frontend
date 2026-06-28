@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import heroStorefront from "../assets/hero-storefront.png";
 import "../styles/Hero.css";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="hero" id="browse">
       <img className="hero-image" src={heroStorefront} alt="" aria-hidden="true" />
@@ -28,9 +30,9 @@ const Hero = () => {
               Explore Businesses
               <span aria-hidden="true">-&gt;</span>
             </a>
-            <a className="hero-button hero-button-secondary" href="#create-account">
+            <button className="hero-button hero-button-secondary" onClick={() => navigate("/list-your-business")}>
               List Your Business
-            </a>
+            </button>
           </div>
 
           <div className="hero-stats" aria-label="Business profile statistics">
