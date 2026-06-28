@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import heroStorefront from "../assets/hero-storefront.png";
 import "../styles/ListYourBusiness.css";
 
 const WHY_CARDS = [
@@ -71,9 +70,6 @@ const ListYourBusinessPage = () => {
             <p className="lyb-hero-desc">
               Give your business a modern, customizable profile that goes beyond a basic listing — and get discovered by customers actively looking for what you offer.
             </p>
-          </div>
-          <div className="lyb-hero-image-wrap">
-            <img src={heroStorefront} alt="Business storefront" className="lyb-hero-image" />
           </div>
         </div>
       </section>
