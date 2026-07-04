@@ -107,6 +107,7 @@ body {
 .auth-content {
   position: relative;
   z-index: 1;
+  margin-top: 60px;
   min-height: calc(100vh - 60px);
   display: flex;
 }
