@@ -1,38 +1,50 @@
 import { useNavigate } from "react-router-dom";
 import AuthShell from "../components/AuthShell";
 
+const UserIcon = () => (
+  <svg width="32" height="34" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 0C13.6425 0 11.3816 0.895533 9.71461 2.48959C8.04762 4.08365 7.11111 6.24566 7.11111 8.5C7.11111 10.7543 8.04762 12.9163 9.71461 14.5104C11.3816 16.1045 13.6425 17 16 17C18.3575 17 20.6184 16.1045 22.2854 14.5104C23.9524 12.9163 24.8889 10.7543 24.8889 8.5C24.8889 6.24566 23.9524 4.08365 22.2854 2.48959C20.6184 0.895533 18.3575 0 16 0ZM1.77778 34H30.2222C31.2 34 32 33.235 32 32.3V30.6C32 24.038 26.4178 18.7 19.5556 18.7H12.4444C5.58222 18.7 0 24.038 0 30.6V32.3C0 33.235 0.8 34 1.77778 34Z" fill="black"/>
+  </svg>
+
+);
+
+const DollarIcon = () => (
+  <svg width="29" height="41" viewBox="0 0 29 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M25.6303 20.1863C24.162 18.9555 22.2955 18.3023 20.3803 18.3488H8.06901C7.50769 18.3629 6.94928 18.2637 6.42721 18.057C5.90513 17.8503 5.43014 17.5404 5.03065 17.1458C4.63117 16.7512 4.31541 16.2801 4.10228 15.7606C3.88914 15.2411 3.78302 14.684 3.79026 14.1225C3.77658 13.904 3.77658 13.6848 3.79026 13.4663C3.95578 12.463 4.48185 11.5547 5.26969 10.9118C6.05753 10.269 7.05294 9.93586 8.06901 9.975H20.1965C21.1858 9.97413 22.1432 10.3247 22.898 10.9641C23.6528 11.6035 24.156 12.4903 24.3178 13.4663H28.2553C28.0904 11.4422 27.1699 9.55431 25.6768 8.1779C24.1837 6.8015 22.2273 6.03739 20.1965 6.0375H16.049V0H12.7678V6.0375H8.06901C6.03827 6.03739 4.08185 6.8015 2.58871 8.1779C1.09558 9.55431 0.175097 11.4422 0.0102639 13.4663C-0.00342131 13.6848 -0.00342131 13.904 0.0102639 14.1225C0.0102639 15.1808 0.21871 16.2287 0.6237 17.2064C1.02869 18.1842 1.62229 19.0726 2.37062 19.8209C3.88193 21.3322 5.9317 22.1812 8.06901 22.1812H20.5115C21.0684 22.1672 21.6224 22.2648 22.141 22.4683C22.6596 22.6718 23.1322 22.977 23.5309 23.366C23.9297 23.7549 24.2465 24.2198 24.4628 24.7331C24.6791 25.2465 24.7904 25.7979 24.7903 26.355C24.8156 26.652 24.8156 26.9505 24.7903 27.2475C24.5818 28.1711 24.0656 28.9964 23.3262 29.5879C22.5869 30.1794 21.6684 30.5019 20.7215 30.5025H8.38401C7.43717 30.5019 6.51868 30.1794 5.77932 29.5879C5.03996 28.9964 4.52369 28.1711 4.31526 27.2475H0.351514C0.577101 29.2198 1.52043 31.0402 3.00176 32.3618C4.48308 33.6833 6.39885 34.4137 8.38401 34.4137H12.7678V40.3725H16.049V34.4137H20.5115C22.4967 34.4137 24.4124 33.6833 25.8938 32.3618C27.3751 31.0402 28.3184 29.2198 28.544 27.2475V26.355C28.5409 25.1759 28.2782 24.012 27.7746 22.9459C27.271 21.8798 26.5389 20.9376 25.6303 20.1863Z" fill="black"/>
+  </svg>
+
+);
+
 const CreateAccountTypePage = () => {
   const navigate = useNavigate();
-
   return (
     <AuthShell>
-      <h1>Create an account as:</h1>
+      <h1 className="auth-type-title">Let's Get Started</h1>
+      <p className="auth-type-subtitle">Select your account type to continue.</p>
 
-      <div className="auth-choice-card">
-        <button
-          className="auth-primary-option"
-          type="button"
-          onClick={() => navigate("/register/customer")}
-        >
-          <span className="auth-user-icon" aria-hidden="true" />
-          A costumer
-        </button>
+      <button
+        className="auth-type-option"
+        type="button"
+        onClick={() => navigate("/register/customer")}
+      >
+        <UserIcon />
+        A costumer
+      </button>
 
-        <div className="auth-divider">
-          <span />
-          or
-          <span />
-        </div>
-
-        <button
-          className="auth-primary-option"
-          type="button"
-          onClick={() => navigate("/register/entrepreneur")}
-        >
-          <span className="auth-dollar-icon" aria-hidden="true">$</span>
-          An entrepreneur
-        </button>
+      <div className="auth-short-divider">
+        <span />
+        or
+        <span />
       </div>
+
+      <button
+        className="auth-type-option"
+        type="button"
+        onClick={() => navigate("/register/business")}
+      >
+        <DollarIcon />
+        A Business Owner
+      </button>
     </AuthShell>
   );
 };
