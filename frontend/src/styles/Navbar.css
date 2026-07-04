@@ -87,6 +87,20 @@
   background: #e8e8e8;
 }
 
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-user-name {
+  color: #ffffff;
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 @media (max-width: 1180px) {
   .navbar-inner {
     width: calc(100% - 48px);

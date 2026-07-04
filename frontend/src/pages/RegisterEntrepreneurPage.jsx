@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthShell from "../components/AuthShell";
 import georgiaFlag from "../assets/georgia-flag.svg";
+import { useAuth } from "../hooks/useAuth";
 
 const EyeOffIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -26,8 +27,35 @@ const ChevronDown = () => (
 
 const RegisterEntrepreneurPage = () => {
   const navigate = useNavigate();
+  const { signup } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [ownerName, setOwnerName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await signup(ownerName, email, password);
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <AuthShell compact>
@@ -36,7 +64,9 @@ const RegisterEntrepreneurPage = () => {
         Create your business account and start reaching more customers.
       </p>
 
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={handleSubmit}>
+        {error && <p className="auth-error">{error}</p>}
+
         <div className="auth-row" style={{ marginBottom: 14 }}>
           <div className="auth-field">
             <label className="auth-label">Business Name</label>
@@ -44,13 +74,29 @@ const RegisterEntrepreneurPage = () => {
           </div>
           <div className="auth-field">
             <label className="auth-label">Owner Name</label>
-            <input className="auth-input" type="text" autoComplete="name" placeholder="Owner Name" />
+            <input
+              className="auth-input"
+              type="text"
+              autoComplete="name"
+              placeholder="Owner Name"
+              value={ownerName}
+              onChange={(e) => setOwnerName(e.target.value)}
+              required
+            />
           </div>
         </div>
 
         <div className="auth-field">
           <label className="auth-label">Email Address</label>
-          <input className="auth-input" type="email" autoComplete="email" placeholder="Enter Your Email" />
+          <input
+            className="auth-input"
+            type="email"
+            autoComplete="email"
+            placeholder="Enter Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
 
         <div className="auth-field">
@@ -78,6 +124,9 @@ const RegisterEntrepreneurPage = () => {
               type={showPassword ? "text" : "password"}
               autoComplete="new-password"
               placeholder="Enter Your Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <button
               type="button"
@@ -98,6 +147,9 @@ const RegisterEntrepreneurPage = () => {
               type={showConfirm ? "text" : "password"}
               autoComplete="new-password"
               placeholder="Confirm Your Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
             />
             <button
               type="button"
@@ -110,8 +162,8 @@ const RegisterEntrepreneurPage = () => {
           </div>
         </div>
 
-        <button className="auth-btn auth-btn--60" style={{ marginTop: 45 }} type="submit">
-          Create Business Account
+        <button className="auth-btn auth-btn--60" style={{ marginTop: 45 }} type="submit" disabled={loading}>
+          {loading ? "Creating..." : "Create Business Account"}
         </button>
       </form>
 

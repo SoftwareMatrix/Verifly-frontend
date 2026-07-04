@@ -1,8 +1,10 @@
 import SearchBar from "./SearchBar";
 import "../styles/Navbar.css";
 import veriflyLogo from "../assets/logo1.png";
+import { useAuth } from "../hooks/useAuth";
 
 const Navbar = ({ onCreateAccount }) => {
+  const { user, logout } = useAuth();
   const navLinks = [
     "Browse",
     "Businesses",
@@ -33,9 +35,18 @@ const Navbar = ({ onCreateAccount }) => {
 
         <div className="navbar-actions">
           <SearchBar onSearch={handleSearch} />
-          <button className="navbar-create-link" onClick={onCreateAccount}>
-            Create Account
-          </button>
+          {user ? (
+            <div className="navbar-user">
+              <span className="navbar-user-name">{user.name}</span>
+              <button className="navbar-create-link" onClick={logout}>
+                Log Out
+              </button>
+            </div>
+          ) : (
+            <button className="navbar-create-link" onClick={onCreateAccount}>
+              Create Account
+            </button>
+          )}
         </div>
       </div>
     </nav>

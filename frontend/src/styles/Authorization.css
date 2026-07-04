@@ -197,6 +197,17 @@ body {
 
 /* ─── Shared form styles ─────────────────────────────────── */
 
+.auth-error {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: rgba(220, 53, 69, 0.15);
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  color: #ff6b6b;
+  font-size: 14px;
+  text-align: center;
+}
+
 .auth-form-title {
   margin: 0 0 20px;
   text-align: center;

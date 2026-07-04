@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthShell from "../components/AuthShell";
+import { useAuth } from "../hooks/useAuth";
 
 const EyeOffIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -28,14 +29,35 @@ const GoogleColorIcon = () => (
 
 const SignInPage = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+    try {
+      await login(email, password);
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <AuthShell signin>
       <h1 className="auth-signin-title">Welcome Back!</h1>
       <p className="auth-signin-subtitle">Sign In To Continue To Your Account</p>
 
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={handleSubmit}>
+        {error && <p className="auth-error">{error}</p>}
+
         <div className="auth-field">
           <label className="auth-label auth-label--lg">Email</label>
           <input
@@ -43,6 +65,9 @@ const SignInPage = () => {
             type="email"
             autoComplete="email"
             placeholder="Enter Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
 
@@ -54,6 +79,9 @@ const SignInPage = () => {
               type={showPassword ? "text" : "password"}
               autoComplete="current-password"
               placeholder="Enter Your Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <button
               type="button"
@@ -74,8 +102,8 @@ const SignInPage = () => {
           <a className="auth-forgot" href="#">Forgot Password?</a>
         </div>
 
-        <button className="auth-btn auth-btn--medium" type="submit">
-          Sign In
+        <button className="auth-btn auth-btn--medium" type="submit" disabled={loading}>
+          {loading ? "Signing In..." : "Sign In"}
         </button>
       </form>
 

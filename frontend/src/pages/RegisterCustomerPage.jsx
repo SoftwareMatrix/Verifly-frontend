@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthShell from "../components/AuthShell";
+import { useAuth } from "../hooks/useAuth";
 
 const EyeOffIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -19,8 +20,35 @@ const EyeIcon = () => (
 
 const RegisterCustomerPage = () => {
   const navigate = useNavigate();
+  const { signup } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await signup(username, email, password);
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <AuthShell>
@@ -29,15 +57,33 @@ const RegisterCustomerPage = () => {
         Create your account to discover and connect with trusted businesses.
       </p>
 
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={handleSubmit}>
+        {error && <p className="auth-error">{error}</p>}
+
         <div className="auth-field">
           <label className="auth-label">Username</label>
-          <input className="auth-input" type="text" autoComplete="username" placeholder="Enter Your Username" />
+          <input
+            className="auth-input"
+            type="text"
+            autoComplete="username"
+            placeholder="Enter Your Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
         </div>
 
         <div className="auth-field">
           <label className="auth-label">Email</label>
-          <input className="auth-input" type="email" autoComplete="email" placeholder="Enter Your Email" />
+          <input
+            className="auth-input"
+            type="email"
+            autoComplete="email"
+            placeholder="Enter Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
 
         <div className="auth-field">
@@ -48,6 +94,9 @@ const RegisterCustomerPage = () => {
               type={showPassword ? "text" : "password"}
               autoComplete="new-password"
               placeholder="Enter Your Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <button
               type="button"
@@ -68,6 +117,9 @@ const RegisterCustomerPage = () => {
               type={showConfirm ? "text" : "password"}
               autoComplete="new-password"
               placeholder="Confirm Your Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
             />
             <button
               type="button"
@@ -80,8 +132,8 @@ const RegisterCustomerPage = () => {
           </div>
         </div>
 
-        <button className="auth-btn" type="submit">
-          Create Account
+        <button className="auth-btn" type="submit" disabled={loading}>
+          {loading ? "Creating..." : "Create Account"}
         </button>
       </form>
 
