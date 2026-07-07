@@ -90,15 +90,93 @@
 .navbar-user {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
+}
+
+.navbar-profile-menu {
+  position: relative;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.navbar-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
+  background: #000000;
+  border: 1px solid #6f6f6f;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.navbar-dropdown-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  color: #ffffff;
+  font-family: "League Spartan", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.navbar-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-profile-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
 }
 
 .navbar-user-name {
   color: #ffffff;
   font-family: "League Spartan", sans-serif;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 300;
   white-space: nowrap;
+}
+
+.navbar-profile-caret {
+  flex-shrink: 0;
+}
+
+.navbar-notification {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.navbar-notification-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
 }
 
 @media (max-width: 1180px) {
