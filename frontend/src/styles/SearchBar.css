@@ -1,0 +1,51 @@
+.search-form {
+  position: relative;
+  width: 170px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background: #000000;
+  border: 1px solid #6f6f6f;
+  border-radius: 5px;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: #aeaeae;
+  border: none;
+  padding: 0 10px 0 38px;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  color: #aeaeae;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 12px;
+  opacity: 1;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+@media (max-width: 1080px) {
+  .search-form {
+    width: 130px;
+  }
+}

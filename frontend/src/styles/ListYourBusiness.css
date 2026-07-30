@@ -1,0 +1,354 @@
+.lyb-page {
+  background: #000;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* ── SHARED ── */
+.lyb-section-inner {
+  width: min(1260px, calc(100% - 180px));
+  margin: 0 auto;
+}
+
+.lyb-separator {
+  width: 100%;
+  height: 1px;
+  background: #aeaeae;
+  margin: 0 0 40px;
+}
+
+.lyb-section-kicker {
+  font-family: "League Spartan", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #aeaeae;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.lyb-section-title {
+  font-family: "League Spartan", sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 46px;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 56px;
+}
+
+/* ── HERO ── */
+.lyb-hero {
+  padding: 100px 0 60px;
+}
+
+.lyb-hero-inner {
+  width: min(1260px, calc(100% - 180px));
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.lyb-hero-text {
+  flex: 1;
+}
+
+.lyb-hero-kicker {
+  font-family: "League Spartan", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #aeaeae;
+  margin: 0 0 26px;
+}
+
+.lyb-hero-title {
+  font-family: "League Spartan", sans-serif;
+  font-size: 65px;
+  font-weight: 600;
+  line-height: 60px;
+  color: #fff;
+  margin: 0 0 36px;
+  max-width: 594px;
+}
+
+.lyb-hero-desc {
+  font-family: "League Spartan", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #aeaeae;
+  max-width: 728px;
+  margin: 0;
+}
+
+.lyb-hero-image-wrap {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.lyb-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── WHY VERIFLY ── */
+.lyb-why {
+  padding: 60px 0 80px;
+}
+
+.lyb-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 390px);
+  gap: 24px;
+  justify-content: center;
+}
+
+.lyb-card {
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 24px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lyb-card-icon {
+  width: 80px;
+  height: 80px;
+  background: #000;
+  border: 1px solid #aeaeae;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lyb-card-title {
+  font-family: "League Spartan", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #fff;
+  margin: 0;
+}
+
+.lyb-card-desc {
+  font-family: "League Spartan", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #aeaeae;
+  margin: 0;
+}
+
+/* ── HOW IT WORKS ── */
+.lyb-how {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 70px 0 80px;
+}
+
+.lyb-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 900px;
+}
+
+.lyb-step {
+  display: flex;
+  gap: 32px;
+}
+
+.lyb-step-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.lyb-step-num-box {
+  width: 80px;
+  height: 78px;
+  background: #141414;
+  border: 1px solid #aeaeae;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.01em;
+  color: #aeaeae;
+  flex-shrink: 0;
+}
+
+.lyb-step-line {
+  width: 1px;
+  height: 100px;
+  background: #aeaeae;
+}
+
+.lyb-step-body {
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.lyb-step-title {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.lyb-step-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: -0.01em;
+  color: #aeaeae;
+  margin: 0;
+  max-width: 842px;
+}
+
+/* ── FORM SECTION ── */
+.lyb-form-section {
+  padding: 80px 0 100px;
+}
+
+.lyb-form-subtitle {
+  font-family: "League Spartan", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #aeaeae;
+  text-align: center;
+  margin: -36px 0 48px;
+}
+
+.lyb-form-card {
+  width: 1000px;
+  margin: 0 auto;
+  background: #121212;
+  border: 1px solid #aeaeae;
+  border-radius: 20px;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.lyb-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lyb-label {
+  font-family: "League Spartan", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #aeaeae;
+}
+
+.lyb-input {
+  width: 100%;
+  height: 90px;
+  background: #000;
+  border: 1px solid #aeaeae;
+  border-radius: 15px;
+  padding: 0 24px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  box-sizing: border-box;
+  outline: none;
+  appearance: none;
+}
+
+.lyb-input::placeholder {
+  color: #555;
+}
+
+.lyb-select {
+  cursor: pointer;
+  color: #fff;
+}
+
+.lyb-select option {
+  background: #121212;
+  color: #fff;
+}
+
+.lyb-submit {
+  width: 100%;
+  height: 90px;
+  background: #fff;
+  border: 1px solid #aeaeae;
+  border-radius: 20px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #000;
+  cursor: pointer;
+  transition: background 160ms ease;
+  margin-top: 8px;
+}
+
+.lyb-submit:hover {
+  background: #e8e8e8;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1300px) {
+  .lyb-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lyb-form-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 860px) {
+  .lyb-hero-inner {
+    flex-direction: column;
+  }
+
+  .lyb-hero-image-wrap {
+    width: 140px;
+    height: 140px;
+  }
+
+  .lyb-hero-title {
+    font-size: 44px;
+    line-height: 42px;
+  }
+
+  .lyb-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .lyb-section-title {
+    font-size: 36px;
+    line-height: 34px;
+  }
+}
